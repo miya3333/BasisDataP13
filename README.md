@@ -45,7 +45,7 @@
 
 
 # Tugas Rumah 1
-[Go To TOP](#TOP)
+[Go To TOP](#basis-data-pertemuan-13)
 ### `membuat database toko_buku`
 > 
 > <img src="/P13/img/P13 - rumah.png" img>
@@ -87,7 +87,7 @@
 `70% saya paham dengan membaca modul, tetapi tidak bisa menghafal semua perintah yang ada. 30% saya mengambil referensi dari chatGPT dan youtube untuk memahami modul ini.`
 
 # Tugas Rumah 2
-[Go To TOP](#TOP)
+[Go To TOP](#basis-data-pertemuan-13)
 ### `membuat database perkuliahan`
 
 > <img src="/P13/img/P13 - rumah2 - db.png">
