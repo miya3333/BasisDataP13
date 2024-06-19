@@ -49,7 +49,7 @@ Tugas Aldi Hermansyah - Laporan materi Pertemuan 13, Tugas Rumah 1 & Tugas Rumah
    > <img src="/P13/img/P13 - rumah - db3.png">
 
 ### 3. Definisikan Stored Procedure untuk Mengetahui Jumlah buku yang Bergenre Romance.
-   > <img src="/P13/img/P13 - rumah - soal3.png">
+   > <img src="/P13/img/P13 - rumah - soal 3.png">
 
 ### 4. Berikan Presentase Pemahaman kalian Pada Modul Kali ini (0-100%) dan Berikan
 penjelasam pada bagian yang kalian belum pahami (apabila ada)
