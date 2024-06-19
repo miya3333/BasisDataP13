@@ -1,5 +1,7 @@
 # Basis Data Pertemuan 13
-Tugas Aldi Hermansyah - Laporan materi Pertemuan 13, Tugas Rumah 1 & Tugas Rumah 2.
+Tugas Aldi Hermansyah
+`Laporan materi Pertemuan 13`
+`Tugas Rumah 1 & Tugas Rumah 2`
 
 ## Laporan Materi
 ## `Commit`
