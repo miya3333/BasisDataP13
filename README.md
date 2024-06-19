@@ -1,10 +1,10 @@
 # Basis Data Pertemuan 13
 Tugas Aldi Hermansyah
-- `Laporan materi Pertemuan 13`
-- `Tugas Rumah 1`
-- `Tugas Rumah 2`
+1. `Laporan materi Pertemuan 13`
+2. `Tugas Rumah 1`
+3. `Tugas Rumah 2`
 
-## - Laporan Materi
+1. ## Laporan Materi
 ## `Commit`
 > <img src="/P13/img/P13 - commit.png" img>
 
