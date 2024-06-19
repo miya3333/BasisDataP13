@@ -43,14 +43,12 @@ Tugas Aldi Hermansyah - Laporan materi Pertemuan 13, Tugas Rumah 1 & Tugas Rumah
    > <img src="/P13/img/P13 - rumah - buku1.png" img>
    > <img src="/P13/img/P13 - rumah - buku2.png" img>
 
-### 2. Definisikan suatu Stored procedure yang berfungsi untuk2 menambahkan data pada
-tabel penulis .
+### 2. Definisikan suatu Stored procedure yang berfungsi untuk2 menambahkan data pada tabel penulis .
    > <img src="/P13/img/P13 - rumah - db1.png" guling>
    > <img src="/P13/img/P13 - rumah - db2.png" guling>
    > <img src="/P13/img/P13 - rumah - db3.png" guling>
 
-### 3. Definisikan Stored Procedure untuk Mengetahui Jumlah buku yang Bergenre
-Romance.
+### 3. Definisikan Stored Procedure untuk Mengetahui Jumlah buku yang Bergenre Romance.
    >
 
 ### 4. Berikan Presentase Pemahaman kalian Pada Modul Kali ini (0-100%) dan Berikan
