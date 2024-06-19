@@ -69,7 +69,7 @@ Tugas Aldi Hermansyah
 > <img src="/P13/img/P13 - rumah - soal 1.png">
    
 
-### 2. Definisikan suatu Stored procedure yang berfungsi untuk2 menambahkan data pada tabel penulis .
+### 2. Definisikan suatu Stored procedure yang berfungsi untuk2 menambahkan data pada tabel penulis.
 > <img src="/P13/img/P13 - rumah - soal 2-1.png">
 
 > <img src="/P13/img/P13 - rumah - soal 2-2.png">
