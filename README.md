@@ -1,12 +1,10 @@
 # Basis Data Pertemuan 13
 Tugas Aldi Hermansyah
-1. `Laporan materi Pertemuan 13`
-2. `Tugas Rumah 1`
-3. `Tugas Rumah 2`
+`Laporan materi Pertemuan 13`
+`Tugas Rumah 1`
+`Tugas Rumah 2`
 
->
-
-1. ## Laporan Materi
+## Laporan Materi
 ## `Commit`
 > <img src="/P13/img/P13 - commit.png" img>
 
@@ -37,7 +35,7 @@ Tugas Aldi Hermansyah
 > ### mengupdate tabel mahasiswa & log_mahasiswa
 > <img src="/P13/img/P13 - t3.png" img>
 
-- ## Tugas Rumah 1
+## Tugas Rumah 1
 > membuat database toko_buku
 > 
 > <img src="/P13/img/P13 - rumah.png" img>
