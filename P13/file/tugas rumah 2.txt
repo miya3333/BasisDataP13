@@ -1,0 +1,283 @@
+TUGAS RUMAH 2
+1. soal
+bikin tabel siswa & daftarnilai -> bikin insert & update-> isi data tabel
+
+-- Membuat tabel siswa
+CREATE TABLE siswa (
+  nis INT PRIMARY KEY,
+  nama VARCHAR(50),
+  status VARCHAR(20)
+);
+
+-- Membuat tabel daftarnilai
+CREATE TABLE daftarnilai (
+  nis INT,
+  nilai INT,
+  FOREIGN KEY (nis) REFERENCES siswa(nis)
+);
+
+-- Definisi trigger pada tabel daftarnilai
+insert:
+DELIMITER //
+CREATE TRIGGER insert_nilai
+AFTER INSERT ON daftarnilai
+FOR EACH ROW
+BEGIN
+    IF NEW.nilai < 75 THEN
+        UPDATE siswa
+        SET status = 'TIDAK LULUS'
+        WHERE nis = NEW.nis;
+    ELSE
+        UPDATE siswa
+        SET status = 'LULUS'
+        WHERE nis = NEW.nis;
+    END IF;
+END //
+DELIMITER ;
+
+update:
+DELIMITER //
+CREATE TRIGGER update_nilai
+AFTER UPDATE ON daftarnilai
+FOR EACH ROW
+BEGIN
+    IF NEW.nilai < 75 THEN
+        UPDATE siswa
+        SET status = 'TIDAK LULUS'
+        WHERE nis = NEW.nis;
+    ELSE
+        UPDATE siswa
+        SET status = 'LULUS'
+        WHERE nis = NEW.nis;
+    END IF;
+END //
+DELIMITER ;
+
+INSERT INTO siswa (nis, nama) VALUES
+(1001, 'Ali'),
+(1005, 'Dita'),
+(1013, 'Jinha'),
+(1015, 'Aldi'),
+(1017, 'Bella');
+
+INSERT INTO daftarnilai (nis, nilai) VALUES
+(1001, 80),
+(1005, 70),
+(1013, 75),
+(1015, 76),
+(1017, 74);
+
+UPDATE daftarnilai SET nilai = 70 WHERE nis = 2;
+
+ALTER TABLE siswa CHANGE nilai nama VARCHAR(255);
+
+DELETE FROM siswa WHERE nis = 1001;
+DELETE FROM siswa WHERE nis = 1005;
+DELETE FROM siswa WHERE nis = 1013;
+DELETE FROM siswa WHERE nis = 1015;
+DELETE FROM siswa WHERE nis = 1017;
+
+DELETE FROM daftarnilai WHERE nis = 1001;
+DELETE FROM daftarnilai WHERE nis = 1005;
+DELETE FROM daftarnilai WHERE nis = 1013;
+DELETE FROM daftarnilai WHERE nis = 1015;
+DELETE FROM daftarnilai WHERE nis = 1017;
+
+INSERT INTO siswa (nis, nama) VALUES
+(1001, 'Alyan'),
+(1005, 'Dita'),
+(1013, 'Jinha');
+
+INSERT INTO daftarnilai (nis, nilai) VALUES
+(1001, 80),
+(1005, 60),
+(1013, 75);
+
+2. soal
+bikin tabel dosen_pa & mahasiswa -> bikin insert, update & delete -> isi data tabel
+
+insert di tabel mahasiswa:
+DELIMITER //
+CREATE TRIGGER insert_mahasiswa
+AFTER INSERT ON mahasiswa
+FOR EACH ROW
+BEGIN
+    UPDATE dosen_pa
+    SET jml_mhs = jml_mhs + 1
+    WHERE id_pa = NEW.id_pa;
+END //
+DELIMITER ;
+
+update di tabel mahasiswa:
+DELIMITER //
+CREATE TRIGGER update_mahasiswa
+AFTER UPDATE ON mahasiswa
+FOR EACH ROW
+BEGIN
+    IF OLD.id_pa != NEW.id_pa THEN
+        UPDATE dosen_pa
+        SET jml_mhs = jml_mhs - 1
+        WHERE id_pa = OLD.id_pa;
+
+        UPDATE dosen_pa
+        SET jml_mhs = jml_mhs + 1
+        WHERE id_pa = NEW.id_pa;
+    END IF;
+END //
+DELIMITER ;
+
+delete di tabel mahasiswa:
+DELIMITER //
+CREATE TRIGGER delete_mahasiswa
+AFTER DELETE ON mahasiswa
+FOR EACH ROW
+BEGIN
+    UPDATE dosen_pa
+    SET jml_mhs = jml_mhs - 1
+    WHERE id_pa = OLD.id_pa;
+END //
+DELIMITER ;
+
+INSERT INTO dosen_pa (id_pa, nama_pa) VALUES
+(001, 'Triyanna Widiyaningtyas, S.T., M.T.'),
+(002, 'Utomo Pujianto, S.Kom., M.Kom.'),
+(003, 'M. Zainal Arifin, S.Si., M.Kom.'),
+(004, 'Didik Dwi Prasetya, S.T., M.T.'),
+(005, 'Drs. Wahyu Sakti G. I., M.Kom.');
+
+INSERT INTO mahasiswa (nim, nama, id_pa) VALUES
+(150571, 'Mudafiq', 001),
+(150572, 'Fitrika', 003),
+(150573, 'Charisma', 002),
+(150574, 'Ivan', 001),
+(150575, 'Adam', 002),
+(150576, 'Irma', 001);
+
+UPDATE mahasiswa SET id_pa = 3 WHERE nim = 150575;
+
+DELETE FROM mahasiswa WHERE nim = 150576;
+DELETE FROM mahasiswa WHERE nim = 150572;
+
+SELECT * FROM dosen_pa;
+
+3. soal
+Buatlah Trigger untuk tabel nilaimhs agar jika terdapat INSERT, UPDATE dan DELETE pada tabel nilaimhs, maka data pada field ip di tabel mhs secara otomatis terupdate.
+Isi tabel mhs: nim, nama & ip.
+Isi tabel mk: kode_mk, nama_mk & sks.
+Isi tabel nilaimhs: nim, kode_mk & sks.
+
+Rumus menghitung Ip (Indeks Prestasi):
+Ip=(jumlah Bobot di tabel mk yang diambil)/(jumlah SKS mk yang diambil)
+
+Dimana, bobot = 
+Jika Nilai Abjad “A” = sks x 4
+Jika Nilai Abjad “B” = sks x 3
+Jika Nilai Abjad “C” = sks x 2
+Jika Nilai Abjad “D” = sks x 1
+
+biki tabel mhs, mk & nilaimhs -> buat fungsi menghitung ip -> bikin insert, update & delete di tabel nilaimhs -> isi data tabel
+
+menghitung ip:
+DELIMITER //
+CREATE FUNCTION hitung_ip(nim INT) RETURNS FLOAT
+BEGIN
+    DECLARE total_bobot FLOAT;
+    DECLARE total_sks INT;
+    
+    -- Menghitung total bobot
+    SELECT SUM(
+        CASE
+            WHEN nilai_abjad = 'A' THEN mk.sks * 4
+            WHEN nilai_abjad = 'B' THEN mk.sks * 3
+            WHEN nilai_abjad = 'C' THEN mk.sks * 2
+            WHEN nilai_abjad = 'D' THEN mk.sks * 1
+            ELSE 0
+        END
+    ) INTO total_bobot
+    FROM nilaimhs
+    JOIN mk ON nilaimhs.kode_mk = mk.kode_mk
+    WHERE nim = nim;
+
+    -- Menghitung total sks
+    SELECT SUM(mk.sks) INTO total_sks
+    FROM nilaimhs
+    JOIN mk ON nilaimhs.kode_mk = mk.kode_mk
+    WHERE nim = nim;
+
+    -- Menghitung IP
+    IF total_sks > 0 THEN
+        RETURN total_bobot / total_sks;
+    ELSE
+        RETURN 0;
+    END IF;
+END //
+DELIMITER ;
+
+insert di tabel nilaimhs:
+DELIMITER //
+CREATE TRIGGER insert_nilaimhs
+AFTER INSERT ON nilaimhs
+FOR EACH ROW
+BEGIN
+    UPDATE mhs
+    SET ip = hitung_ip(NEW.nim)
+    WHERE nim = NEW.nim;
+END //
+DELIMITER ;
+
+update di tabel nilaimhs:
+DELIMITER //
+CREATE TRIGGER update_nilaimhs
+AFTER UPDATE ON nilaimhs
+FOR EACH ROW
+BEGIN
+    UPDATE mhs
+    SET ip = hitung_ip(NEW.nim)
+    WHERE nim = NEW.nim;
+END //
+DELIMITER ;
+
+delete di tabel nilaimhs:
+DELIMITER //
+CREATE TRIGGER delete_nilaimhs
+AFTER DELETE ON nilaimhs
+FOR EACH ROW
+BEGIN
+    UPDATE mhs
+    SET ip = hitung_ip(OLD.nim)
+    WHERE nim = OLD.nim;
+END //
+DELIMITER ;
+
+INSERT INTO mhs (nim, nama) VALUES
+(101, 'Andi'),
+(102, 'Rahmat'),
+(103, 'Bayu');
+
+INSERT INTO mk (kode_mk, nama_mk, sks) VALUES
+('PTI447', 'Praktikum Basis Data', 1),
+('TIK342', 'Praktikum Basis Data', 1),
+('PTI333', 'Basis Data Terdistribusi', 3),
+('TIK123', 'Jaringan Komputer', 2),
+('TIK333', 'Sistem Operasi', 3),
+('PTI123', 'Grafika Multimedia', 3),
+('PTI777', 'Sistem Informasi', 2);
+
+INSERT INTO nilaimhs (nim, kode_mk, nilai_abjad) VALUES
+(101, 'PTI447', 'A'),
+(101, 'PTI123', 'B');
+
+SELECT * FROM mhs;
+
+UPDATE nilaimhs
+SET nilai_abjad = 'A'
+WHERE nim = 101
+AND kode_mk = 'PTI123';
+
+SELECT * FROM mhs;
+
+DELETE FROM nilaimhs
+WHERE nim = 101
+AND kode_mk = 'PTI123';
+
+SELECT * FROM mhs;
