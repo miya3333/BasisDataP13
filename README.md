@@ -4,7 +4,7 @@ Tugas Aldi Hermansyah
 - `Tugas Rumah 1`
 - `Tugas Rumah 2`
 
-- ## Laporan Materi
+## - Laporan Materi
 ## `Commit`
 > <img src="/P13/img/P13 - commit.png" img>
 
