@@ -79,4 +79,4 @@ Tugas Aldi Hermansyah
 > <img src="/P13/img/P13 - rumah - soal 3.png">
 
 ### 4. Berikan Presentase Pemahaman kalian Pada Modul Kali ini (0-100%) dan Berikan penjelasan pada bagian yang kalian belum pahami (apabila ada)
-`80% saya paham dengan membaca modul, 20% saya mengambil referensi dari chatGPT dan youtube untuk memahami modul ini.`
+`80% saya paham dengan membaca modul, tetapi tidak bisa menghafal semua peintah yang ada. 20% saya mengambil referensi dari chatGPT dan youtube untuk memahami modul ini.`
