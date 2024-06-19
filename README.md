@@ -35,6 +35,7 @@ Tugas Aldi Hermansyah
 > <img src="/P13/img/P13 - t2.png" img>
 
 > ### mengupdate tabel mahasiswa & log_mahasiswa
+> 
 > <img src="/P13/img/P13 - t3.png" img>
 
 ## Tugas Rumah 1
@@ -42,16 +43,33 @@ Tugas Aldi Hermansyah
 > 
 > <img src="/P13/img/P13 - rumah.png" img>
 
+> ### Tabel buku
+> <img src="/P13/img/P13 - rumah - buku1.png" img>
+
+> <img src="/P13/img/P13 - rumah - buku2.png" img>
+
+> ### Tabel penulis
+> <img src="/P13/img/P13 - rumah - penulis1.png" img>
+
+> <img src="/P13/img/P13 - rumah - penulis2.png" img>
+
+> <img src="/P13/img/P13 - rumah - penulis3.png" img>
+
+> ### Tabel detail_buku
+> 
+> <img src="/P13/img/P13 - rumah - db1.png">
+
+> <img src="/P13/img/P13 - rumah - db2.png">
+
+> <img src="/P13/img/P13 - rumah - db3.png">
+
 ### 1.  Definisikan Store prosedure untuk mengetahui apakah suatu buku tersedia atau tidak. Jika Tersedia, set status "BUKU TERSEDIA". Jika tidak Tersedia, set status "BUKU SEDANG KOSONG".
    > (saya menggunakan >20 untuk melihat “BUKU TERSEDIA” dan <20 untuk “BUKU SEDANG KOSONG”)
    > 
-   > <img src="/P13/img/P13 - rumah - buku1.png" img>
-   > <img src="/P13/img/P13 - rumah - buku2.png" img>
+   
 
 ### 2. Definisikan suatu Stored procedure yang berfungsi untuk2 menambahkan data pada tabel penulis .
-   > <img src="/P13/img/P13 - rumah - db1.png">
-   > <img src="/P13/img/P13 - rumah - db2.png">
-   > <img src="/P13/img/P13 - rumah - db3.png">
+   
 
 ### 3. Definisikan Stored Procedure untuk Mengetahui Jumlah buku yang Bergenre Romance.
    > <img src="/P13/img/P13 - rumah - soal 3.png">
