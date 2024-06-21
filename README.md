@@ -85,27 +85,37 @@
 # Tugas Rumah 2
 [Go To TOP](#basis-data-pertemuan-13)
 ### `membuat database perkuliahan`
+> <img src="/P13/img/P13 - rumah - db perkuliahan.png">
 
-> <img src="/P13/img/P13 - rumah2 - db.png">
 ### 1. Buat tabel siswa dengan field nis, nama, dan status serta tabel daftarnilai dengan field nis dan nilai. Selanjutnya, definisikan trigger pada tabel daftarnilai, sehingga saat melakukan INSERT dan UPDATE pada tabel daftarnilai, field status akan otomatis terisi “LULUS” atau “TIDAK LULUS” dengan ketentuan apabila nilai < 75 dinyatakan tidak lulus.
 ### `Tabel siswa & Tabel daftarnilai`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 1 tabel.png">
 
 ### `Trigger INSERT & UPDATE`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 1 trigger.png">
 
 ### `Menambahkan data`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 1 tambah data.png">
 
 ### 2. Buatlah dua tabel dosen_pa (field : id_pa, nama_pa, jml_mhs) dan mahasiswa (field: nim, nama, id_pa). Kemudian buatlah trigger pada tabel mahasiswa untuk menghitung jumlah mahasiswa yang dibimbing oleh masing-masing dosen_pa. Skenarionya, ketika terjadi INSERT, UPDATE dan DELETE pada tabel mahasiswa, field jml_mhs pada tabel dosen_pa akan terupdate secara otomatis.
 ### `Tabel dosen_pa & Tabel mahasiswa`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 2 tabel.png">
 
 ### `Trigger INSERT, UPDATE & DELETE`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 2 trigger.png">
 
 ### `Menggunakan INSERT`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 2 insert.png">
 
 ### `Menggunakan UPDATE`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 2 update.png">
 
 ### `Menggunakan DELETE`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 2 delete.png">
 
 ### `3. Buatlah Trigger untuk tabel nilaimhs agar jika terdapat INSERT, UPDATE dan DELETE pada tabel nilaimhs, maka data pada field ip di tabel mhs secara otomatis terupdate.
+### `Tabel mhs, Tabel mk & Tabel nilaimhs`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 3 tabel.png">
 
 Rumus menghitung Ip (Indeks Prestasi):
 
@@ -121,3 +131,17 @@ Dimana, bobot =
     Jika Nilai Abjad “C” = sks x 2
     Jika Nilai Abjad “D” = sks x 1
 
+### `Menghitung Ip`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 3 hitung ip.png">
+
+### `Trigger INSERT, UPDATE & DELETE`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 3 trigger.png">
+
+### `Menggunakan INSERT`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 3 insert.png">
+
+### `Menggunakan UPDATE`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 3 update.png">
+
+### `Menggunakan DELETE`
+> <img src="/P13/img/P13 - rumah - db perkuliahan - 3 delete.png">
